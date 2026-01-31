@@ -1,8 +1,9 @@
 ---
 name: smart-fetch
-description: Use when user provides a URL and indicates an intent about its content. Fetches and distills web pages to extract only relevant information. Triggers: URL, intent + URL, "smart-fetch", "what does this page say about..."
+description: >
+  Fetch URLs and extract only relevant content via intent.
+  Triggers: URL + question, smart-fetch, what does this page say about.
 ---
-
 # smart-fetch
 
 Fetch URLs and extract only the relevant information. Uses playbooks (free) with Firecrawl fallback, then distills via Gemini 2.5 Flash.
@@ -65,8 +66,8 @@ smart-fetch "<url>" "<intent>"
 
 **Parameters:**
 
-- `url`: The webpage to fetch
-- `intent`: What information you need (be specific for best results)
+- [ ] `url`: The webpage to fetch
+- [ ] `intent`: What information you need (be specific for best results)
 
 **Output:** Crystallized markdown to stdout. Status messages go to stderr.
 
@@ -128,8 +129,8 @@ Typical: ~$3/month at 500 fetches.
 
 ## Troubleshooting
 
-| Error                                             | Cause                                 | Fix                                        |
-| ------------------------------------------------- | ------------------------------------- | ------------------------------------------ |
+| Error                                               | Cause                                 | Fix                                          |
+| --------------------------------------------------- | ------------------------------------- | -------------------------------------------- |
 | `GEMINI_API_KEY not set`                          | Env var missing                       | Add to `~/.zshrc`, restart terminal/Cursor |
-| `FIRECRAWL_API_KEY not set - cannot use fallback` | JS-heavy page, no fallback configured | Add Firecrawl key or use different URL     |
-| Sparse content warning                            | Page requires JS rendering            | Firecrawl fallback will handle it          |
+| `FIRECRAWL_API_KEY not set - cannot use fallback` | JS-heavy page, no fallback configured | Add Firecrawl key or use different URL       |
+| Sparse content warning                              | Page requires JS rendering            | Firecrawl fallback will handle it            |
