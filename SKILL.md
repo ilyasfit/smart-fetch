@@ -2,8 +2,9 @@
 name: smart-fetch
 description: >
   Fetch URLs and extract only relevant content via intent.
-  Triggers: URL + question, smart-fetch, what does this page say about.
+  Triggers: URL OR URL + intent, smart-fetch, what does this page say about.
 ---
+
 # smart-fetch
 
 Fetch URLs and extract only the relevant information. Uses playbooks (free) with Firecrawl fallback, then distills via Gemini 2.5 Flash.
@@ -129,8 +130,8 @@ Typical: ~$3/month at 500 fetches.
 
 ## Troubleshooting
 
-| Error                                               | Cause                                 | Fix                                          |
-| --------------------------------------------------- | ------------------------------------- | -------------------------------------------- |
+| Error                                             | Cause                                 | Fix                                        |
+| ------------------------------------------------- | ------------------------------------- | ------------------------------------------ |
 | `GEMINI_API_KEY not set`                          | Env var missing                       | Add to `~/.zshrc`, restart terminal/Cursor |
-| `FIRECRAWL_API_KEY not set - cannot use fallback` | JS-heavy page, no fallback configured | Add Firecrawl key or use different URL       |
-| Sparse content warning                              | Page requires JS rendering            | Firecrawl fallback will handle it            |
+| `FIRECRAWL_API_KEY not set - cannot use fallback` | JS-heavy page, no fallback configured | Add Firecrawl key or use different URL     |
+| Sparse content warning                            | Page requires JS rendering            | Firecrawl fallback will handle it          |
