@@ -1,0 +1,17 @@
+{
+  "name": "smart-fetch",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "smart-fetch": "./smart-fetch.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^1.0.0",
+    "@mendable/firecrawl-js": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/celebi/agent-web-suite.git",
+    "directory": "smart-fetch"
+  }
+}
